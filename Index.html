@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mini App Agenda</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <button id="toggleTheme" class="theme-toggle">🌙 Mode sombre</button>
+
+  <div class="container">
+    <h1>📌 MON ERP </h1>
+
+    <div class="tabs">
+      <button class="tab active" data-tab="calendrier">Calendrier</button>
+      <button class="tab" data-tab="todolist">To-Do List</button>
+      <button class="tab" data-tab="memo">Mémo</button>
+    </div>
+
+    <div id="calendrier" class="tab-content">
+      <div class="calendar-header">
+        <button id="prevMonth">◀</button>
+        <span id="monthYear"></span>
+        <button id="nextMonth">▶</button>
+      </div>
+      <table class="calendar">
+        <thead>
+          <tr>
+            <th>Lun</th><th>Mar</th><th>Mer</th><th>Jeu</th><th>Ven</th><th>Sam</th><th>Dim</th>
+          </tr>
+        </thead>
+        <tbody id="calendarBody"></tbody>
+      </table>
+    </div>
+
+    <div id="todolist" class="tab-content hidden">
+      <form id="todoForm">
+        <input type="text" id="todoInput" placeholder="Ajouter une tâche globale..." />
+        <button type="submit">Ajouter</button>
+      </form>
+      <ul id="todoList"></ul>
+    </div>
+
+    <div id="memo" class="tab-content hidden">
+      <textarea id="memoInput" rows="5" placeholder="Note quelque chose ici..."></textarea>
+      <button id="saveMemo">Enregistrer</button>
+      <p id="memoSaved"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
